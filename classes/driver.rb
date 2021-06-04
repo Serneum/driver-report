@@ -1,5 +1,5 @@
 class Driver
-  attr_reader :name, :trips
+  attr_reader :trips
 
   def initialize(name)
     @name = name
@@ -20,7 +20,7 @@ class Driver
   end
 
   def report
-    message = "#{name}: #{totalMiles.round} miles"
+    message = "#{@name}: #{totalMiles.round} miles"
     if totalMiles > 0
       message += " @ #{averageSpeed.round} mph"
     end
