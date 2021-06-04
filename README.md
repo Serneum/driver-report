@@ -81,3 +81,5 @@ If this project were to continue, trips would be a model association via ActiveR
 Much like in `runner.rb`, I opted to be pessimistic about input and add start/end time swapping if the end time is actually before the start time. While the prompt specified that the end time would always be a later time, you can never fully trust external input.
 
 The trip time also handles converting down to hours as that is the common unit of time that makes all other calculations elsehwere easier.
+
+In the case of negative distances in the input file, the application assumes that the value should just be positive. The other option was to set the distance to 0, but it seemed more realistic to assume that the absolute value of the distance would be more correct in this case.
