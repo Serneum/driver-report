@@ -21,6 +21,8 @@ I have two methods: `processDriver` and `processTrip`. Realistically, I could ha
 
 I opted for raising errors around invalid input even though the prompt made it clear that data would have a specific format. This was mostly because you can never really trust input from an external source, and I wanted to be a little pessimistic in the file processing.
 
+One of the main goals with the `Runner` class was to handle all of the input errors so that there could be minimal error handling and data validation further down the stack.
+
 ### driver.rb
 
 This is a pretty basic class, with no real big choices. I opted to have a `report` method so that a user could opt for individual driver reports, or a full report of all drivers like the `generateReport` method in `runner.rb`. This also makes the output easy to test and validate.
