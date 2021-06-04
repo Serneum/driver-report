@@ -12,7 +12,7 @@ class Trip
       @endTime = tmpTime
     end
 
-    @distance = distance.to_f
+    @distance = distance.to_f.abs
   end
 
   def time
