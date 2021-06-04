@@ -51,6 +51,7 @@ This program is a little over-engineered, but the prompt requested multiple clas
 3. Likely do something like batch the inputs from a file, and remove the input file if the full batch was imported. Otherwise, discard the imported data
 4. Raising errors is not the best method of reporting issues to the user. I'd like to process all lines in a file and then report all of the errors at once. This makes for easier debugging because a user could address all of the issues in a file before trying again instead of fixing one error, running the program, fixing the next error, etc.
 5. Spin up a web server. Allow the user to perform CRUD operations on Drivers and Trips to fix any data that may have been valid but incorrect, and also avoid the need for input files
+6. Handle non-numeric distances when processing Trip information
 
 ---
 
