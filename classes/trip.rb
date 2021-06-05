@@ -1,7 +1,7 @@
 class Trip
   require 'time'
 
-  attr_reader :distance
+  attr_reader :startTime, :endTime, :distance
 
   def initialize(startTime, endTime, distance)
     @startTime = Time.parse(startTime)
