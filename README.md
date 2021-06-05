@@ -71,6 +71,10 @@ I opted for raising errors around invalid input even though the prompt made it c
 
 One of the main goals with the `Runner` class was to handle all of the input errors so that there could be minimal error handling and data validation further down the stack.
 
+### runner_spec.rb
+
+We can assume that the Driver model is properly tested, and mock out most functionality. This allows us to focus on verifying that the correct methods are called, and that we are raising the correct exceptions without needing to worry about much else.
+
 ### driver.rb
 
 This is a pretty basic class, with no real big choices. I opted to have a `report` method so that a user could opt for individual driver reports, or a full report of all drivers like the `generateReport` method in `runner.rb`. This also makes the output easy to test and validate.
@@ -80,6 +84,10 @@ For the `averageSpeed` calculation, I opted for an early return if the driver ha
 An `addTrip` method exists to push devs to call the method instead of doing something like `driver.trips << Trip.new(..., ..., ...)`. It also makes testing trip additions easier because the `valid?` method on the Trip model can be mocked.
 
 If this project were to continue, trips would be a model association via ActiveRecord, but this was a rapid prototype so it is just a list of objects for now.
+
+### driver_spec.rb
+
+We can assume that the Trip model is properly tested, and mock out most functionality, like `valid?`
 
 ### trip.rb
 
