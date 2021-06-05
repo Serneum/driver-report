@@ -77,6 +77,8 @@ This is a pretty basic class, with no real big choices. I opted to have a `repor
 
 For the `averageSpeed` calculation, I opted for an early return if the driver had never recorded a trip. This prevents an error around dividing by 0. There is no need to do the same check for `totalMiles` because dividing `0` by any non-zero amount of time would still be `0`.
 
+An `addTrip` method exists to push devs to call the method instead of doing something like `driver.trips << Trip.new(..., ..., ...)`. It also makes testing trip additions easier because the `valid?` method on the Trip model can be mocked.
+
 If this project were to continue, trips would be a model association via ActiveRecord, but this was a rapid prototype so it is just a list of objects for now.
 
 ### trip.rb

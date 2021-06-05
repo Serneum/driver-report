@@ -1,6 +1,5 @@
 class Runner
   require './classes/driver'
-  require './classes/trip'
 
   VALID_COMMANDS = [
     'Driver',
@@ -44,11 +43,11 @@ class Runner
     name = lineParts.shift
     driver = getDriver(name)
     raise "Driver '#{name}' does not already exist in the system." unless driver
+
     startTime = lineParts.shift
     endTime = lineParts.shift
     distance = lineParts.shift
-    trip = Trip.new(startTime, endTime, distance)
-    driver.trips << trip if trip.valid?
+    driver.addTrip(startTime, endTime, distance)
   end
 
   def generateReport

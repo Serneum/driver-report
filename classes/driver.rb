@@ -1,9 +1,18 @@
 class Driver
+  require './classes/trip'
+
   attr_reader :trips
 
   def initialize(name)
     @name = name
     @trips = []
+  end
+
+  def addTrip(startTime, endTime, distance)
+    trip = Trip.new(startTime, endTime, distance)
+    valid = trip.valid?
+    @trips << trip if valid
+    return valid
   end
 
   def totalMiles
